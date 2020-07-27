@@ -3,7 +3,7 @@ import string
 import random
 
 
-FILE_NAME='war-and-peace.txt'
+FILE_NAME= '../data/war-and-peace.txt'
 
 
 # Create dict with world statistics
