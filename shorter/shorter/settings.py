@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'shorter',
+    'user.apps.UserConfig',
     'shortcut.apps.ShortcutConfig',
     'django.contrib.admin',
     'django.contrib.auth',

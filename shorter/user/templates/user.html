@@ -1,0 +1,19 @@
+<p>User:</p>
+{% if user.is_authenticated %}
+<p> Hello {{user}} </p>
+{% else %}
+<form action="{% url 'u:auth' %}?redirect={{request.get_full_path}}" method="post">
+    {% csrf_token %}
+    <p>
+        <label for="id_username">Name:</label>
+        <input type="text" name="username" maxlength="256" required id="id_username">
+    </p>
+    <p>
+        <label for="id_password">Password:</label>
+        <input type="password" name="password" required id="id_password">
+    </p>
+    <p>
+            <input type="submit">
+    </p>
+</form>
+{% endif %}
