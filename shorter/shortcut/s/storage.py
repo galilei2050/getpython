@@ -5,7 +5,7 @@ from collections import UserDict
 
 class ShortUrlStorage(UserDict):
     def __missing__(self, key):
-        shortcut = ShortUrl.objects.get(key=short_key)
+        shortcut = ShortUrl.objects.get(key=key)
         self[key] = shortcut
         return shortcut
 

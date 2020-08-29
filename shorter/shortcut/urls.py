@@ -4,7 +4,6 @@ from .views import index
 from .s import urls
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', index),
     path('s/', include(urls.urlpatterns))
 ]
