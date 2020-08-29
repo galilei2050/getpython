@@ -1,18 +1,21 @@
 import pytest
-import random
 from shortcut.models import ShortUrl
 
 
-@pytest.mark.django_db
 @pytest.fixture()
-def shortcut(url):
-    short_url = ShortUrl(url=url, key=hash(url))
-    short_url.save()
-    return short_url
+def domain():
+    return 'com'
+
+
+@pytest.fixture()
+def short_key(url):
+    su = ShortUrl(url=url, key=hash(url))
+    su.save()
+    return su
 
 
 @pytest.mark.django_db
-def test_long(client, shortcut):
-    response = client.get(f'/s/{shortcut.key}')
+def test_long(client, short_key):
+    response = client.get(f'/s/{short_key.key}')
     assert response.status_code == 302
-    assert response.url == shortcut.url
+    assert response.url == short_key.url
