@@ -1,5 +1,28 @@
 
 def factorial(n):
+    """
+    n > 0
+    n! = 1*2*3*...*n
+    0! = 1
+    1! = 1
+    Complexity = O(n),
+    Exits C, N,
+    For all n > N,
+    Number of computations < C*n
+
+    O(1) - not depencency on n
+    O(log n)
+    O(n)
+
+    O(n log n)
+
+    O(n^2)
+    O(2^n)
+
+    :param n:
+    :return:
+    """
+
     if n < 2:
         return 1
     return factorial(n-1)*n
