@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+    backend:
+        build: ./backend
+        container_name: "awesome_server"
+        restart: always
+        network_mode: "host"
+        volumes:
+            - /etc/localtime:/etc/localtime:ro
+            - /etc/timezone:/etc/timezone:ro
+    proxy:
+        image: nginx
+        network_mode: "host"
+        container_name: "awesome_proxy"
+        volumes:
+            - /etc/localtime:/etc/localtime:ro
+            - /etc/timezone:/etc/timezone:ro
+            - ./awesome-site:/etc/nginx/conf.d/default.conf
+            - ./frontend:/frontend
+
+
