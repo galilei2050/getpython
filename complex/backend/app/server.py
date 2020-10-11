@@ -12,7 +12,7 @@ app = fastapi.FastAPI()
 async def root():
     return [
         {
-            "name": f"Pusy cat {i}",
+            "name": f"Pussy cat {i}",
             "image": f"/public/cat{i}.jpg",
         } for i in range(1, 4)
     ]
