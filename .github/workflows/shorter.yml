@@ -1,6 +1,11 @@
 name: Shorter App
 
-on: [push]
+
+on:
+  push:
+    paths:
+    - 'shorter/**'
+
 
 jobs:
   build:

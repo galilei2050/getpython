@@ -1,6 +1,9 @@
 name: Complex App
 
-on: [push]
+on:
+  push:
+    paths:
+    - 'complex/**'
 
 jobs:
   push_to_registry:
