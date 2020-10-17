@@ -36,4 +36,11 @@ jobs:
     
     - name: Test with pytest
       run: |
-        cd shorter && python3 -m pytest tests
+        cd shorter && python3 -m pytest --cov=shortcut --cov-report=xml --cov-report=html tests
+
+    - name: Upload coverage
+      uses: actions/upload-artifact@v2
+      with:
+        name: Coverage report
+        path: |
+          htmlcov
