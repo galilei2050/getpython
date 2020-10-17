@@ -19,5 +19,5 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
           path: ./complex/backend
-          repository: my-org/my-repo/my-image
+          repository: vgalilei/getpython/complexbackend
           tag_with_ref: true
