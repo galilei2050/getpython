@@ -43,4 +43,4 @@ jobs:
       with:
         name: Coverage report
         path: |
-          htmlcov
+          shorter/htmlcov
