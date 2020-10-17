@@ -16,5 +16,6 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
+          path: complex/backend
           repository: vgalilei/getpython/cats
           tag_with_ref: true
