@@ -3,7 +3,7 @@ name: Django App
 on:
   push:
     paths:
-      - 'shorter/**
+      - 'shorter/**'
 
 jobs:
   test:

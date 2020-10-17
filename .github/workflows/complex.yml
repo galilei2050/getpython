@@ -3,7 +3,7 @@ name: Complex App
 on:
   push:
     paths:
-      - 'complex/**
+      - 'complex/**'
 
 jobs:
   backend_image:
