@@ -1,6 +1,9 @@
 name: Django App
 
-on: [push]
+on:
+  push:
+    paths:
+      - 'shorter/**
 
 jobs:
   test:

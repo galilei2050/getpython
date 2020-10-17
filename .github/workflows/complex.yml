@@ -1,6 +1,9 @@
 name: Complex App
 
-on: [push]
+on:
+  push:
+    paths:
+      - 'complex/**
 
 jobs:
   backend_image:
