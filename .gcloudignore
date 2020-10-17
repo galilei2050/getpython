@@ -1,5 +1,6 @@
 # Other files in project
 
+.vscode/
 .git/
 .directory
 .dockerignore

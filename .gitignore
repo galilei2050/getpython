@@ -1,6 +1,8 @@
 .directory
 htmlcov
 
+.vscode
+
 # Idea
 .idea
 
