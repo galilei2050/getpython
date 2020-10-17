@@ -1,4 +1,5 @@
 django
 pytest
 pytest-django
+pytest-cov
 
