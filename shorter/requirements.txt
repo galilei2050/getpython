@@ -1,4 +1,5 @@
 django
+flake8
 pytest
 pytest-django
-
+pytest-cov

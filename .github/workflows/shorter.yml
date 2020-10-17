@@ -1,0 +1,41 @@
+name: Shorter App
+
+
+on:
+  push:
+    paths:
+    - 'shorter/**'
+
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.6, 3.7, 3.8]
+
+    steps:
+    - uses: actions/checkout@v2
+      name: get my code
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r shorter/requirements.txt
+
+    - name: Test with pytest
+      run: |
+        cd shorter
+        python -m pytest --cov=shortcut --cov-report=html tests
+
+    - name: Archive code coverage results
+      uses: actions/upload-artifact@v2
+      with:
+        name: code-coverage-report
+        path: shorter/htmlcov
