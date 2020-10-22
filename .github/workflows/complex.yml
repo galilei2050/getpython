@@ -37,4 +37,5 @@ jobs:
           docker-compose build
       - name: Up services
         run: |
+          cd complex
           docker-compose up -d
