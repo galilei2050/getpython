@@ -50,4 +50,5 @@ jobs:
       - name: Copy to production
         run: |
           echo ${{ secrets.DJANGO_SSH_KEY }} > id_rsa
-          scp -i id_rsa ./shorter/ django@164.90.151.184:/home/django/django_project/
+          cat id_rsa
+          scp -i id_rsa -r ./shorter/* django@164.90.151.184:/home/django/django_project
