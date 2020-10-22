@@ -5,6 +5,7 @@ on:
   push:
     paths:
     - 'shorter/**'
+    - '.github/**'
 
 
 jobs:
@@ -17,7 +18,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-      name: get my code
+      name: Checkout
 
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
@@ -39,3 +40,14 @@ jobs:
       with:
         name: code-coverage-report
         path: shorter/htmlcov
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        name: Checkout
+
+      - name: Copy to production
+        run: |
+          echo ${{ secrets.DJANGO_SSH_KEY }} > id_rsa
+          scp -i id_rsa ./shorter/ django@164.90.151.184:/home/django/django_project/
