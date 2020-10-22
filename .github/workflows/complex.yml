@@ -4,6 +4,7 @@ on:
   push:
     paths:
     - 'complex/**'
+    - '.github/**'
 
 jobs:
   push_to_registry:
@@ -22,3 +23,18 @@ jobs:
           path: complex/backend
           repository: vgalilei/getpython/cats
           tag_with_ref: true
+
+  deploy_to_production:
+    name: "Deploy complex app to production"
+    run-on: "prod"
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+
+      - name: Build images locally
+        run: |
+          cd complex
+          docker-compose build
+      - name: Up services
+        run: |
+          docker-compose up -d
