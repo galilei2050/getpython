@@ -1,0 +1,19 @@
+BOS:
+  - JFK
+  - MIA
+JFK: 
+  - MIA
+  - DFW
+  - SFO
+MIA:
+  - LAX
+DFW:
+  - ORD
+  - LAX
+ORD:
+  - DFW
+SFO:
+  - LAX
+LAX:
+  - ORD
+QPC: []
