@@ -1,0 +1,8 @@
+BOS: ['JFK', 'MIA']
+MIA: ['LAX']
+LAX: ['ORD']
+DFW: ['ORD', 'LAX']
+ORD: ['DFW', 'BOS']
+JFK: ['MIA', 'DFW', 'SFO']
+SFO: ['LAX']
+QPC: []
