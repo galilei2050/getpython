@@ -5,7 +5,8 @@ from .child import Child
 
 
 class Family(object):
-    def __init__(self, *members):
+    def __init__(self, flag, *members):
+        self._flag = flag
         self._members = list(members)
 
     def __len__(self):
@@ -15,7 +16,7 @@ class Family(object):
         return item in self._members
 
     def born(self, name):
-        if len(self._members) < 2:
+        if len(self) < 2:
             return None
         child = Child(parents=self._members[:2], name=name, sex=random.choice(Human.SEX), birthday=datetime.now())
         self._members.append(child)

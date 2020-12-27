@@ -11,6 +11,12 @@ class Human(object):
     SEX = [MALE, FEMALE, OTHER]
 
     def __init__(self, birthday, sex, name):
+        '''
+        Human()
+        :param birthday:
+        :param sex:
+        :param name:
+        '''
         self.name = name
         self.birthday = birthday
         self.sex = sex
@@ -19,7 +25,7 @@ class Human(object):
         n = datetime.now()
         return int((n - self.birthday).days/365)
 
-    def can_drink_alcohol(self):
+    def is_mature(self):
         return self.age() > MATURE_AGE
 
     def __repr__(self):
